@@ -1,0 +1,284 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+/*
+.dale{
+    height: 350px;
+    width: 200px;
+}
+.container{
+    width: 200px;
+    height: 350px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: gallary 20s linear infinite;
+    cursor: pointer;
+}
+    */
+.inicio {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.inicio img {
+    width: 60px;
+    margin-right: 15px;
+}
+
+.menu {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.menu:hover {
+    color: #ddd;
+}
+
+/* Content Section */
+.tienda {
+    padding-top: 80px; /* To compensate for fixed header */
+    background-color: #fff;
+    padding: 20px;
+}
+
+.super {
+    font-size: 32px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.tabla {
+    margin: 0 auto;
+    width: 90%;
+    padding: 20px;
+}
+
+.tabla img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.lacteos {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.lacteos:hover {
+    transform: scale(1.05);
+}
+.bebidas {
+    
+    width: 400px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.bebidas:hover {
+    transform: scale(1.05);
+}
+/* Product Links */
+table a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+table a:hover {
+    color: #333;
+}
+
+/* Images */
+.fami, .famili {
+    width: 1000px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.javis {
+    width: 300px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Funcionamiento Section */
+.funcionamiento img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.familis {
+    width: 400px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+}
+
+footer a img {
+    width: 100px;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tabla {
+        width: 95%;
+    }
+
+    .lacteos {
+        width: 150px;
+    }
+
+    .fami, .famili, .familis {
+        width: 100%;
+    }
+
+    .javis {
+        width: 90%;
+    }
+}
+/* Estilos generales para el footer */
+.footer {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 15px;
+    min-width: 200px; /* Mínimo de ancho para evitar que las secciones se vuelvan demasiado pequeñas */
+}
+
+.footer-section h3,
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffa500; /* Color naranja para destacar títulos */
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer-section ul li a:hover {
+    color: #ffa500; /* Cambia de color al pasar el ratón */
+}
+
+/* Estilos para la sección de redes sociales */
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+    transition: transform 0.2s;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+}
+
+/* Estilos para el área inferior del footer */
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    color: #aaa;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section h3,
+    .footer-section h4 {
+        font-size: 16px;
+    }
+    .footer-section p,
+    .footer-section ul,
+    .footer-section li {
+        font-size: 13px;
+    }
+    .footer-bottom {
+        font-size: 11px;
+    }
+}

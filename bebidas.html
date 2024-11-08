@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo2.css">
+    <title>Productos - Abarrotes</title>
+    <script>
+        // Función para añadir productos al carrito
+        let carrito = [];
+
+        function addToCart(producto, precio) {
+            carrito.push({ producto: producto, precio: precio });
+            alert(`${producto} ha sido añadido al carrito.`);
+            actualizarCarrito();
+        }
+
+        // Función para cancelar un producto del carrito
+        function cancelarProducto(producto) {
+            let index = carrito.findIndex(item => item.producto === producto);
+            if (index !== -1) {
+                carrito.splice(index, 1);
+                alert(`${producto} ha sido eliminado del carrito.`);
+                actualizarCarrito();
+            }
+        }
+        // Actualizar el contenido del carrito
+        function actualizarCarrito() {
+            let carritoContent = "";
+            let total = 0;
+            carrito.forEach((item) => {
+                carritoContent += `${item.producto} - ${item.precio} Bs\n`;
+                total += item.precio;
+            });
+            carritoContent += `\nTotal: ${total.toFixed(2)} Bs`;
+            document.getElementById("carrito").innerText = carritoContent;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="inicio">
+            <img src="imagenes/jv.jpeg" alt="Logo" class="logo">
+            <a class="menu" href="index.html">INICIO</a>
+            <a class="menu" href="oferta.html">OFERTAS</a>
+            <a class="menu" href="pedidos.html">PEDIDOS</a>
+            <a class="menu" href="registro.html" target="_blank">REGÍSTRATE</a> 
+        </div>
+    </header>
+    <h1>Productos - Bebidas</h1>
+    <h2>bebidas </h2>
+    <div class="slider-container">
+        <img src="imagenes/vino.jpg" alt="Producto 1" class="slide">
+        <img src="imagenes/paceña.webp" alt="Producto 2" class="slide">
+        <img src="imagenes/huari lata.webp" alt="Producto 3" class="slide">
+    </div>
+    <!-- Sección de productos -->
+    <table>
+        <tr>
+            <td><img src="imagenes/fernet.webp" alt="Arroz"></td>
+            <td><img src="imagenes/ronlim.webp" alt="Arroz"></td>
+            <td><img src="imagenes/ronman.webp" alt="Arroz"></td>
+            <td><img src="imagenes/ronblan.webp" alt="Arroz"></td>
+        </tr>
+        <tr>
+            <td>Fernet Branca 750 ml<br>Precio: 95,00Bs<br>
+                <button onclick="addToCart('Fernet Branca 750 ml', 95.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Fernet Branca 750 ml')">Cancelar</button>
+            </td>
+            <td>Ron Bacardi Limon de 750 ml<br>Precio: 112,00Bs<br>
+                <button onclick="addToCart('Ron Bacardi Limon de 750 ml', 112.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Ron Bacardi Limon de 750 ml')">Cancelar</button>
+            </td>
+            <td>RON BACARDI MANZANA <br>Precio: 83,50Bs<br>
+                <button onclick="addToCart('RON BACARDI MANZANA ', 83.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('RON BACARDI MANZANA ')">Cancelar</button>
+            </td>
+            <td>RON BACARDI CARTA BLANCO DE 980 ML<br>Precio: 112,00Bs<br>
+                <button onclick="addToCart('RON BACARDI CARTA BLANCO DE 980 ML', 112.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('RON BACARDI CARTA BLANCO DE 980 ML')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/bombay.webp" alt="Arroz"></td>
+            <td><img src="imagenes/bodka.webp" alt="Arroz"></td>
+            <td><img src="imagenes/champan.webp" alt="Garbanzo"></td>
+            <td><img src="imagenes/sidra.webp" alt="Lenteja"></td>
+        </tr>
+        <tr>
+            <td>GIN BOMBAY SAPPHIRE <br>Precio: 194,00Bs<br>
+                <button onclick="addToCart('GIN BOMBAY SAPPHIRE ', 194.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('GIN BOMBAY SAPPHIRE ')">Cancelar</button>
+            </td>
+            <td>VODKA SMIRNOFF N21 <br>Precio: 70,00Bs<br>
+                <button onclick="addToCart('VODKA SMIRNOFF N21', 70.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('VODKA SMIRNOFF N21')">Cancelar</button>
+            </td>
+            <td>CHAMPAGNE CHANDON ROSE 750 ML<br>Precio: 128,020Bs<br>
+                <button onclick="addToCart('CHAMPAGNE CHANDON ROSE 750 ML', 128.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CHAMPAGNE CHANDON ROSE 750 ML')">Cancelar</button>
+            </td>
+            <td>SIDRA FARRUCA DE 710 ML<br>Precio: 16,50Bs<br>
+                <button onclick="addToCart('SIDRA FARRUCA DE 710 ML', 16.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('SIDRA FARRUCA DE 710 ML')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/whisky.webp" alt="Lenteja"></td>
+            <td><img src="imagenes/champan1.webp" alt="Maní"></td>
+            <td><img src="imagenes/gin.webp" alt="Maní"></td>
+            <td><img src="imagenes/champan2.webp" alt="Quinua"></td>
+        </tr>
+        <tr>
+            <td>WHISKY CHANCELER GOLDEN LABEL 1000 ML<br>Precio: 38,80Bs<br>
+                <button onclick="addToCart('WHISKY CHANCELER GOLDEN LABEL 1000 ML', 38.80)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('WHISKY CHANCELER GOLDEN LABEL 1000 ML')">Cancelar</button>
+            </td>
+            <td>CHAMPAGNE CHANDON DELICE 750 ML<br>Precio: 131,00Bs<br>
+                <button onclick="addToCart('CHAMPAGNE CHANDON DELICE 750 ML', 131.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CHAMPAGNE CHANDON DELICE 750 ML')">Cancelar</button>
+            </td>
+            <td>GIN BEEFEATER 750 ML<br>Precio: 165,00Bs<br>
+                <button onclick="addToCart('GIN BEEFEATER 750 ML', 165.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('GIN BEEFEATER 750 ML')">Cancelar</button>
+            </td>
+            <td>CHAMPAGNE MERCIER DULCE 750 ML<br>Precio: 60,00Bs<br>
+                <button onclick="addToCart('CHAMPAGNE MERCIER DULCE 750 ML', 60.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CHAMPAGNE MERCIER DULCE 750 ML')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/amarula.webp" alt="Quinua"></td>
+            <td><img src="imagenes/bacardi.webp" alt="Quinua"></td>
+            <td><img src="imagenes/tequila.webp" alt="Sémola"></td>
+            <td><img src="imagenes/singani.webp" alt="Trigo"></td>
+        </tr>
+        <tr>
+            <td>Amarula Crema y Amarula 750 ml<br>Precio: 138,00Bs<br>
+                <button onclick="addToCart('Amarula Crema y Amarula 750 ml', 138.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Amarula Crema y Amarula 750 ml')">Cancelar</button>
+            </td>
+            <td>Ron Bacardi Raspberry 750 ml<br>Precio: 85,00Bs<br>
+                <button onclick="addToCart('Ron Bacardi Raspberry 750 ml', 85.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Ron Bacardi Raspberry 750 ml')">Cancelar</button>
+            </td>
+            <td>Tequila Oro Olmeca 750 ml<br>Precio: 105,00Bs<br>
+                <button onclick="addToCart('Tequila Oro Olmeca 750 ml', 105.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Tequila Oro Olmeca 750 ml')">Cancelar</button>
+            </td>
+            <td>Singani Tres Estrella Negro 750 ml<br>Precio: 35,40Bs<br>
+                <button onclick="addToCart('Singani Tres Estrella Negro 750 ml', 35.40)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Singani Tres Estrella Negro 750 ml')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><img src="imagenes/singanireal.webp" alt="Quinua"></td>
+            <td><img src="imagenes/flor.webp" alt="Quinua"></td>
+            <td><img src="imagenes/mojito.webp" alt="Sémola"></td>
+            <td><img src="imagenes/singaniazul.webp" alt="Trigo"></td>
+        </tr>
+        <tr>
+            <td>Singani Casa Real Tradicional 750 ml<br>Precio: 52,00Bs<br>
+                <button onclick="addToCart('SINGANI CASA REAL TRADICIONAL 750 ML', 52.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('SINGANI CASA REAL TRADICIONAL 750 ML')">Cancelar</button>
+            </td>
+            <td>Ron Flor de Caña 750 mlL<br>Precio: 376,00Bs<br>
+                <button onclick="addToCart('Ron Flor de Caña 750 ml', 376.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Ron Flor de Caña 750 ml')">Cancelar</button>
+            </td>
+            <td>MOJITO BACARDI DE 980 ML<br>Precio: 103,00Bs<br>
+                <button onclick="addToCart('MOJITO BACARDI DE 980 ML', 103.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('MOJITO BACARDI DE 980 ML')">Cancelar</button>
+            </td>
+            <td>SINGANI ETIQUETA AZUL CASA REAL 750 ML<br>Precio: 33,00Bs<br>
+                <button onclick="addToCart('SINGANI ETIQUETA AZUL CASA REAL 750 ML',33.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('SINGANI ETIQUETA AZUL CASA REAL 750 ML')">Cancelar</button>
+            </td>
+        </tr>
+    </table> 
+    <h2>cervezas</h2>
+    <div class="slider-container">
+        <img src="imagenes/cerveza.jpg" alt="Producto 1" class="slide">
+        <img src="imagenes/cerveza1.jpg" alt="Producto 2" class="slide">
+        <img src="imagenes/cerveza2.webp" alt="Producto 3" class="slide">
+    </div>
+    <!-- Sección de productos -->
+    <table>
+        <tr>
+            <td><img src="imagenes/paceña.webp" alt="Arroz"></td>
+            <td><img src="imagenes/corona.webp" alt="Arroz"></td>
+            <td><img src="imagenes/burgesa.webp" alt="Arroz"></td>
+            <td><img src="imagenes/paceña1.webp" alt="Arroz"></td>
+        </tr>
+        <tr>
+            <td>CERVEZA PACEÑA LATA 269 ML<br>Precio: 6,00Bs<br>
+                <button onclick="addToCart('CERVEZA PACEÑA LATA 269 ML', 6.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA PACEÑA LATA 269 ML')">Cancelar</button>
+            </td>
+            <td>CERVEZA CORONITA CORONA EXTRA DE 210 ML<br>Precio: 7,00Bs<br>
+                <button onclick="addToCart('CERVEZA CORONITA CORONA EXTRA DE 210 ML', 7.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA CORONITA CORONA EXTRA DE 210 ML')">Cancelar</button>
+            </td>
+            <td>CERVEZA BURGUESA DE 473 ML<br>Precio: 9,00Bs<br>
+                <button onclick="addToCart('CERVEZA BURGUESA DE 473 ML', 9.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA BURGUESA DE 473 ML')">Cancelar</button>
+            </td>
+            <td>CERVEZA CENTENARIO PACEÑA DE 350 ML<br>Precio: 9,00Bs<br>
+                <button onclick="addToCart('CERVEZA CENTENARIO PACEÑA DE 350 ML', 9.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA CENTENARIO PACEÑA DE 350 ML')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><img src="imagenes/conti.webp" alt="Arroz"></td>
+            <td><img src="imagenes/huarichoco.webp" alt="Arroz"></td>
+            <td><img src="imagenes/cordillera.webp" alt="Garbanzo"></td>
+            <td><img src="imagenes/huari1.webp" alt="Lenteja"></td>
+        </tr>
+        <tr>
+            <td>CERVEZA ZERO GRAU CONTI DE 269 ML<br>Precio: 5,50Bs<br>
+                <button onclick="addToCart('CERVEZA ZERO GRAU CONTI DE 269 ML', 5.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA ZERO GRAU CONTI DE 269 ML')">Cancelar</button>
+            </td>
+            <td>CERVEZA HUARI DE CHOCOLATE DE 330 ML<br>Precio: 10,50Bs<br>
+                <button onclick="addToCart('CERVEZA HUARI DE CHOCOLATE DE 330 ML', 10.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA HUARI DE CHOCOLATE DE 330 ML')">Cancelar</button>
+            </td>
+            <td>CERVEZA CORDILLERA DE 473 ML<br>Precio: 8,00Bs<br>
+                <button onclick="addToCart('CERVEZA CORDILLERA DE 473 ML', 8.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA CORDILLERA DE 473 ML')">Cancelar</button>
+            </td>
+            <td>CERVEZA CORONA BOTELLA 355 ML<br>Precio: 11,00Bs<br>
+                <button onclick="addToCart('CERVEZA CORONA BOTELLA 355 ML', 11.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA CORONA BOTELLA 355 ML')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/verde.webp" alt="Lenteja"></td>
+            <td><img src="imagenes/huarimiel.webp" alt="Maní"></td>
+            <td><img src="imagenes/real.webp" alt="Maní"></td>
+            <td><img src="imagenes/estela.webp" alt="Quinua"></td>
+        </tr>
+        <tr>
+            <td>CERVEZA HEINEKEN 330 ML<br>Precio: 12,50Bs<br>
+                <button onclick="addToCart('CERVEZA HEINEKEN 330 ML', 12.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA HEINEKEN 330 ML')">Cancelar</button>
+            </td>
+            <td>Cerveza Huari Miel 330 ml<br>Precio: 10,50Bs<br>
+                <button onclick="addToCart('CERVEZA HUARI MIEL 330 ML', 10.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA HUARI MIEL 330 ML')">Cancelar</button>
+            </td>
+            <td>CERVEZA REAL LATA 350 ML<br>Precio: 6,50Bs<br>
+                <button onclick="addToCart('CERVEZA REAL LATA 350 ML', 6.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA REAL LATA 350 ML')">Cancelar</button>
+            </td>
+            <td>CERVEZA STELLA ARTOIS 335 ML<br>Precio: 12,00Bs<br>
+                <button onclick="addToCart('CERVEZA STELLA ARTOIS 335 ML', 12.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA STELLA ARTOIS 335 ML')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/ducal.webp" alt="Quinua"></td>
+            <td><img src="imagenes/ice.webp" alt="Quinua"></td>
+            <td><img src="imagenes/centenario.webp" alt="Sémola"></td>
+            <td><img src="imagenes/huari lata.webp" alt="Trigo"></td>
+        </tr>
+        <tr>
+            <td>CERVEZA DUCAL LATA 354 ML<br>Precio: 6,50Bs<br>
+                <button onclick="addToCart('CERVEZA DUCAL LATA 354 ML', 6.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA DUCAL LATA 354 ML')">Cancelar</button>
+            </td>
+            <td>CERVEZA PACEÑA ICE LATA 355 ML<br>Precio: 5,00Bs<br>
+                <button onclick="addToCart('CERVEZA PACEÑA ICE LATA 355 ML', 5.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA PACEÑA ICE LATA 355 ML')">Cancelar</button>
+            </td>
+            <td>CERVEZA PACEÑA CENTENARIO 354 ML<br>Precio: 7,90Bs<br>
+                <button onclick="addToCart('CERVEZA PACEÑA CENTENARIO 354 ML', 7.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA PACEÑA CENTENARIO 354 ML')">Cancelar</button>
+            </td>
+            <td>CERVEZA HUARI LATA 354 ML<br>Precio: 9,80Bs<br>
+                <button onclick="addToCart('CERVEZA HUARI LATA 354 ML', 9.80)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA HUARI LATA 354 ML')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><img src="imagenes/paceñamini.webp" alt="Arroz"></td>
+            <td><img src="imagenes/real1.webp" alt="Arroz"></td>
+            <td><img src="imagenes/ducal1.webp" alt="Arroz"></td>
+            <td><img src="imagenes/potosina.webp" alt="Arroz"></td>
+        </tr>
+        <tr>
+            <td>CERVEZA PILSENER PACEÑA DE 235 ML<br>Precio: 4,00Bs<br>
+                <button onclick="addToCart('CERVEZA PILSENER PACEÑA DE 235 ML', 4.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA PILSENER PACEÑA DE 235 ML')">Cancelar</button>
+            </td>
+            <td>CERVEZA REAL LATA 350 ML<br>Precio: 6,50Bs<br>
+                <button onclick="addToCart('CERVEZA REAL LATA 350 ML', 6.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA REAL LATA 350 ML')">Cancelar</button>
+            </td>
+            <td>CERVEZA DUCAL LATA 354 ML<br>Precio: 6,50Bs<br>
+                <button onclick="addToCart('CERVEZA DUCAL LATA 354 ML', 6.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA DUCAL LATA 354 ML')">Cancelar</button>
+            </td>
+            <td>CERVEZA PILSENER POTOSINA PILSENER DE 350 ML<br>Precio: 7,00Bs<br>
+                <button onclick="addToCart('CERVEZA PILSENER POTOSINA PILSENER DE 350 ML', 7.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CERVEZA PILSENER POTOSINA PILSENER DE 350 ML')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+    <h2>Vinos</h2>
+    <div class="slider-container">
+        <img src="imagenes/vino.jpg" alt="Producto 1" class="slide">
+        <img src="imagenes/vino1.jpg" alt="Producto 2" class="slide">
+        <img src="imagenes/vino2.jpg" alt="Producto 3" class="slide">
+    </div>
+    <!-- Sección de productos -->
+    <table>
+        <tr>
+            <td><img src="imagenes/vinotinto.webp" alt="Arroz"></td>
+            <td><img src="imagenes/premiun.webp" alt="Arroz"></td>
+            <td><img src="imagenes/campo.webp" alt="Arroz"></td>
+            <td><img src="imagenes/fresh.webp" alt="Arroz"></td>
+        </tr>
+        <tr>
+            <td>VINO TINTO KOHLBERG DE 750 ML<br>Precio: 23,70Bs<br>
+                <button onclick="addToCart('VINO TINTO KOHLBERG DE 750 ML', 23.70)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('VINO TINTO KOHLBERG DE 750 ML')">Cancelar</button>
+            </td>
+            <td>VINO PREMIUM GRAND CUVEE ROSSA 750 ML<br>Precio: 50,00Bs<br>
+                <button onclick="addToCart('VINO PREMIUM GRAND CUVEE ROSSA 750 ML', 50.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('VINO PREMIUM GRAND CUVEE ROSSA 750 ML')">Cancelar</button>
+            </td>
+            <td>VINO TINTO CAMPO DE SOLANA DE 750 ML<br>Precio: 24,00Bs<br>
+                <button onclick="addToCart('VINO TINTO CAMPO DE SOLANA DE 750 ML', 24.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('VINO TINTO CAMPO DE SOLANA DE 750 ML')">Cancelar</button>
+            </td>
+            <td>VINO FREIXENET FRESH Y CHISP 750 ML<br>Precio: 102,50Bs<br>
+                <button onclick="addToCart('VINO FREIXENET FRESH Y CHISP 750 ML', 102.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('VINO FREIXENET FRESH Y CHISP 750 ML')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/delicate.webp" alt="Arroz"></td>
+            <td><img src="imagenes/cordon.webp" alt="Arroz"></td>
+            <td><img src="imagenes/aranjuez.webp" alt="Garbanzo"></td>
+            <td><img src="imagenes/rose.webp" alt="Lenteja"></td>
+        </tr>
+        <tr>
+            <td>VINO FREIXENET DELICATE Y SWEET MOSCATO 750 ML<br>Precio: 102,50Bs<br>
+                <button onclick="addToCart('VINO FREIXENET DELICATE Y SWEET MOSCATO 750 ML', 102.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('VINO FREIXENET DELICATE Y SWEET MOSCATO 750 ML')">Cancelar</button>
+            </td>
+            <td>FREIXENET CORDON NEGRO BURT 750 ML<br>Precio: 127,00Bs<br>
+                <button onclick="addToCart('FREIXENET CORDON NEGRO BURT 750 ML', 127.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('FREIXENET CORDON NEGRO BURT 750 ML')">Cancelar</button>
+            </td>
+            <td>VINO ARANJUEZ DUO 750 ML<br>Precio: 39,50Bs<br>
+                <button onclick="addToCart('VINO ARANJUEZ DUO 750 ML', 39.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('VINO ARANJUEZ DUO 750 ML')">Cancelar</button>
+            </td>
+            <td>VINO VERDE ROSE GAZELA 750 ML<br>Precio: 67,00Bs<br>
+                <button onclick="addToCart('VINO VERDE ROSE GAZELA 750 ML', 67.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('VINO VERDE ROSE GAZELA 750 ML')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/merlot.webp" alt="Lenteja"></td>
+            <td><img src="imagenes/fruti.webp" alt="Maní"></td>
+        </tr>
+        <tr>
+            <td>VINO TRUMPETER MERLOT 750 ML<br>Precio: 81,00Bs<br>
+                <button onclick="addToCart('VINO TRUMPETER MERLOT 750 ML', 81.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('VINO TRUMPETER MERLOT 750 ML')">Cancelar</button>
+            </td>
+            <td>Freixenet Mia Fruity Sweet 750 ml<br>Precio: 102,50Bs<br>
+                <button onclick="addToCart('FREIXENET MIA FRUITY SWEET 750 ML', 102.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('FREIXENET MIA FRUITY SWEET 750 ML')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+    <!-- Carrito de compras -->
+    <h2>Carrito de Compras</h2>
+    <pre id="carrito">Tu carrito está vacío.</pre>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section contacto">
+                <h3>Supermercados Javis</h3>
+                <p>¡La frescura y calidad que mereces!</p>
+                <p>Dirección: Calle japo, Ciudad El Alto, País Bolivia</p>
+                <p>Teléfono: +591 77214890</p>
+                <p>Email: info@supermercadosjavis.com</p>
+            </div>
+        
+            <div class="footer-section enlaces">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="oferta.html">Ofertas del Día</a></li>
+                    <li><a href="produc.fresco.html">Frutas y Verduras</a></li>
+                    <li><a href="produc.fresco.html">Carnes y Pescados</a></li>
+                    <li><a href="#">Mi Cuenta</a></li>
+                </ul>
+            </div>
+            
+            <!-- Horarios de Atención -->
+            <div class="footer-section horarios">
+                <h4>Horarios de Atención</h4>
+                <p>Lunes a Viernes: 8:00 AM - 8:00 PM</p>
+                <p>Sábado: 9:00 AM - 6:00 PM</p>
+                <p>Domingo: 10:00 AM - 4:00 PM</p>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="footer-section redes">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/me/"><img src="imagenes/face.jpeg" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/javier.gutierrezflores.58/profilecard/?igsh=azFtb3c5amUxeWZj"><img src="imagenes/insta.jpeg" alt="Instagram"></a>
+                    <a href="#"><img src="imagenes/twiter.jpeg" alt="Twitter"></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Supermercados Javis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

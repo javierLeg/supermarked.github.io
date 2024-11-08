@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo2.css">
+    <title>Productos - Abarrotes</title>
+    <script>
+        // Función para añadir productos al carrito
+        let carrito = [];
+
+        function addToCart(producto, precio) {
+            carrito.push({ producto: producto, precio: precio });
+            alert(`${producto} ha sido añadido al carrito.`);
+            actualizarCarrito();
+        }
+
+        // Función para cancelar un producto del carrito
+        function cancelarProducto(producto) {
+            let index = carrito.findIndex(item => item.producto === producto);
+            if (index !== -1) {
+                carrito.splice(index, 1);
+                alert(`${producto} ha sido eliminado del carrito.`);
+                actualizarCarrito();
+            }
+        }
+        // Actualizar el contenido del carrito
+        function actualizarCarrito() {
+            let carritoContent = "";
+            let total = 0;
+            carrito.forEach((item) => {
+                carritoContent += `${item.producto} - ${item.precio} Bs\n`;
+                total += item.precio;
+            });
+            carritoContent += `\nTotal: ${total.toFixed(2)} Bs`;
+            document.getElementById("carrito").innerText = carritoContent;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="inicio">
+            <img src="imagenes/jv.jpeg" alt="Logo" class="logo">
+            <a class="menu" href="index.html">INICIO</a>
+            <a class="menu" href="oferta.html">OFERTAS</a>
+            <a class="menu" href="pedidos.html">PEDIDOS</a>
+            <a class="menu" href="registro.html" target="_blank">REGÍSTRATE</a> 
+        </div>
+    </header>
+    <h1>Productos - Ofertas</h1>
+    <h2>variedad de productos</h2>
+    <div class="slider-container">
+        <img src="imagenes/oferta.jpg" alt="Producto 1" class="slide">
+        <img src="imagenes/ofertas1.jpg" alt="Producto 2" class="slide">
+        <img src="imagenes/ofertas2.png" alt="Producto 3" class="slide">
+    </div>
+    <!-- Sección de productos -->
+    <table>
+        <tr>
+            <td><img src="imagenes/pollo.webp" alt="pollo"></td>
+            <td><img src="imagenes/papel.webp" alt="papel"></td>
+            <td><img src="imagenes/energi.webp" alt="energizante"></td>
+            <td><img src="imagenes/detebolivar.avif" alt="detergente"></td>
+        </tr>
+        <tr>
+            <td>Pollo Relleno Sofia en Caja<br>Precio: 75,00Bs<br>
+                <button onclick="addToCart('Pollo Relleno Sofia en Caja', 75.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Pollo Relleno Sofia en Caja')">Cancelar</button>
+            </td>
+            <td>Papel Higuienico Esencias Elegance Scott de 12 Uni<br>Precio: 44,00Bs<br>
+                <button onclick="addToCart('Papel Higuienico Esencias Elegance Scott de 12 Uni', 44.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Papel Higuienico Esencias Elegance Scott de 12 Uni')">Cancelar</button>
+            </td>
+            <td>Energizante Monster Energy de 473 ml 24 Uni<br>Precio: 16,00Bs<br>
+                <button onclick="addToCart('Energizante Monster Energy de 473 ml 24 Uni', 16.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Energizante Monster Energy de 473 ml 24 Uni')">Cancelar</button>
+            </td>
+            <td>Detergente Bolivar Limon 800 g<br>Precio: 26,00Bs<br>
+                <button onclick="addToCart('Detergente Bolivar Limon 800 g', 26.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Detergente Bolivar Limon 800 g')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/deteuno.webp" alt="detergente"></td>
+            <td><img src="imagenes/durazno.webp" alt="durazno"></td>
+            <td><img src="imagenes/nescafe.webp" alt="nescafe"></td>
+            <td><img src="imagenes/cafe.webp" alt="nescafe"></td>
+        </tr>
+        <tr>
+            <td>Detergente Armonia Floral Uno 2.1 kg<br>Precio: 36,00Bs<br>
+                <button onclick="addToCart('Detergente Armonia Floral Uno 2.1 kg', 36.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Detergente Armonia Floral Uno 2.1 kg')">Cancelar</button>
+            </td>
+            <td>
+                Mitades de Durazno al Jugo Norte 820 g<br>Precio: 18,50Bs<br>
+                <button onclick="addToCart('Mitades de Durazno al Jugo Norte 820 g', 18.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Mitades de Durazno al Jugo Norte 820 g')">Cancelar</button>
+            </td>
+            <td>Nescafe Original tapa Cafe de 200 gr<br>Precio: 49,00Bs<br>
+                <button onclick="addToCart('Nescafe Original tapa Cafe de 200 gr', 49.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Nescafe Original tapa Cafe de 200 gr')">Cancelar</button>
+            </td>
+            <td>CafeTradicion tapa Roja Nescafe de 100 gr<br>Precio: 32,80Bs<br>
+                <button onclick="addToCart('CafeTradicion tapa Roja Nescafe de 100 gr', 32.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CafeTradicion tapa Roja Nescafe de 100 gr')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/bonbom.webp" alt="bonbom"></td>
+            <td><img src="imagenes/aceite.webp" alt="aceite"></td>
+            <td><img src="imagenes/gatoradea.webp" alt="gatorade"></td>
+            <td><img src="imagenes/gatorader.webp" alt="gatorade"></td>
+        </tr>
+        <tr>
+            <td>Bon o Bon Original 450 g<br>Precio: 45,00Bs<br>
+                <button onclick="addToCart('Bon o Bon Original 450 g', 45.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Bon o Bon Original 450 g')">Cancelar</button>
+            </td>
+            <td>Aceite Fino Light 1,8 l<br>Precio: 34,00Bs<br>
+                <button onclick="addToCart('Aceite Fino Light 1,8 l', 34.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Aceite Fino Light 1,8 l')">Cancelar</button>
+            </td>
+            <td>Gatorade Cool Blue de 500 ml<br>Precio: 6,50Bs<br>
+                <button onclick="addToCart('Gatorade Cool Blue de 500 ml', 6.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Gatorade Cool Blue de 500 ml')">Cancelar</button>
+            </td>
+            <td>Gatorade Frutas Tropicales de 500 ml<br>Precio: 6,50Bs<br>
+                <button onclick="addToCart('Gatorade Frutas Tropicales de 500 ml', 6.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Gatorade Frutas Tropicales de 500 ml')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/sevenup.webp" alt="sevenup"></td>
+            <td><img src="imagenes/galleta.webp" alt="galleta"></td>
+            <td><img src="imagenes/guarana.webp" alt="guarana"></td>
+            <td><img src="imagenes/guarana2.webp" alt="guarana"></td>
+        </tr>
+        <tr>
+            <td>Gaseosa Seven Up de 2000 ml<br>Precio: 9,00Bs<br>
+                <button onclick="addToCart('Gaseosa Seven Up de 2000 ml', 9.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Gaseosa Seven Up de 2000 ml')">Cancelar</button>
+            </td>
+            <td>Galleta de Chocolate Frac de 273 gr<br>Precio: 15,40Bs<br>
+                <button onclick="addToCart('Galleta de Chocolate Frac de 273 gr', 15.40)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Galleta de Chocolate Frac de 273 gr')">Cancelar</button>
+            </td>
+            <td>Gaseosa Guarana Antartica de 3000 ml<br>Precio: 14,00Bs<br>
+                <button onclick="addToCart('Gaseosa Guarana Antartica de 3000 ml', 14.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Gaseosa Guarana Antartica de 3000 ml')">Cancelar</button>
+            </td>
+            <td>Gaseosa Antarctica Guarana 2 L<br>Precio: 11,00Bs<br>
+                <button onclick="addToCart('Gaseosa Antarctica Guarana 2 L', 11.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Gaseosa Antarctica Guarana 2 L')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td><img src="imagenes/chocolate.webp" alt="chocolate"></td>
+            <td><img src="imagenes/deteariel.webp" alt="dete"></td>
+            <td><img src="imagenes/salsa.webp" alt="salsa"></td>
+            <td><img src="imagenes/aceite2.webp" alt="aceite"></td>
+        </tr>
+        <tr>
+            <td>Chocolate Bon o Bon San Valentín 20 U. 340 Gr<br>Precio: 29,90Bs<br>
+                <button onclick="addToCart('Chocolate Bon o Bon San Valentín 20 U. 340 Gr', 29.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Chocolate Bon o Bon San Valentín 20 U. 340 Gr')">Cancelar</button>
+            </td>
+            <td>Detergente Ariel 800 g<br>Precio: 22,50Bs<br>
+                <button onclick="addToCart('Detergente Ariel 800 g', 22.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Detergente Ariel 800 g')">Cancelar</button>
+            </td>
+            <td>Salsa La Costeña Picante 140 ML<br>Precio: 11,90Bs<br>
+                <button onclick="addToCart('Salsa La Costeña Picante 140 ML', 11.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Salsa La Costeña Picante 140 ML')">Cancelar</button>
+            </td>
+            <td>Aceite Fino Light Natural y Nutritivo 4,5 l<br>Precio: 8,00Bs<br>
+                <button onclick="addToCart('Aceite Fino Light Natural y Nutritivo 4,5 l', 8.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('Aceite Fino Light Natural y Nutritivo 4,5 l')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+    <!-- Carrito de compras -->
+    <h2>Carrito de Compras</h2>
+    <pre id="carrito">Tu carrito está vacío.</pre>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section contacto">
+                <h3>Supermercados Javis</h3>
+                <p>¡La frescura y calidad que mereces!</p>
+                <p>Dirección: Calle japo, Ciudad El Alto, País Bolivia</p>
+                <p>Teléfono: +591 77214890</p>
+                <p>Email: info@supermercadosjavis.com</p>
+            </div>
+        
+            <div class="footer-section enlaces">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="oferta.html">Ofertas del Día</a></li>
+                    <li><a href="produc.fresco.html">Frutas y Verduras</a></li>
+                    <li><a href="produc.fresco.html">Carnes y Pescados</a></li>
+                    <li><a href="#">Mi Cuenta</a></li>
+                </ul>
+            </div>
+            
+            <!-- Horarios de Atención -->
+            <div class="footer-section horarios">
+                <h4>Horarios de Atención</h4>
+                <p>Lunes a Viernes: 8:00 AM - 8:00 PM</p>
+                <p>Sábado: 9:00 AM - 6:00 PM</p>
+                <p>Domingo: 10:00 AM - 4:00 PM</p>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="footer-section redes">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/me/"><img src="imagenes/face.jpeg" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/javier.gutierrezflores.58/profilecard/?igsh=azFtb3c5amUxeWZj"><img src="imagenes/insta.jpeg" alt="Instagram"></a>
+                    <a href="#"><img src="imagenes/twiter.jpeg" alt="Twitter"></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Supermercados Javis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

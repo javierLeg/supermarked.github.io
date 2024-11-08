@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo2.css">
+    <title>Productos - Abarrotes</title>
+    <script>
+        // Función para añadir productos al carrito
+        let carrito = [];
+
+        function addToCart(producto, precio) {
+            carrito.push({ producto: producto, precio: precio });
+            alert(`${producto} ha sido añadido al carrito.`);
+            actualizarCarrito();
+        }
+
+        // Función para cancelar un producto del carrito
+        function cancelarProducto(producto) {
+            let index = carrito.findIndex(item => item.producto === producto);
+            if (index !== -1) {
+                carrito.splice(index, 1);
+                alert(`${producto} ha sido eliminado del carrito.`);
+                actualizarCarrito();
+            }
+        }
+
+        // Actualizar el contenido del carrito
+        function actualizarCarrito() {
+            let carritoContent = "";
+            let total = 0;
+            carrito.forEach((item) => {
+                carritoContent += `${item.producto} - ${item.precio} Bs\n`;
+                total += item.precio;
+            });
+            carritoContent += `\nTotal: ${total.toFixed(2)} Bs`;
+            document.getElementById("carrito").innerText = carritoContent || "Tu carrito está vacío.";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="inicio">
+            <img src="imagenes/jv.jpeg" alt="Logo" class="logo">
+            <a class="menu" href="index.html">INICIO</a>
+            <a class="menu" href="oferta.html">OFERTAS</a>
+            <a class="menu" href="pedidos.html">PEDIDOS</a>
+            <a class="menu" href="registro.html" target="_blank">REGÍSTRATE</a> 
+        </div>
+    </header>
+    <h1>Productos - Frescos</h1>
+
+    <h2>Verduras</h2>
+    <div class="slider-container">
+        <img src="imagenes/verduras.jpg" alt="Producto 1" class="slide">
+        <img src="imagenes/verduras1.jpg" alt="Producto 2" class="slide">
+        <img src="imagenes/verduras2.jpg" alt="Producto 3" class="slide">
+    </div>
+    <table>
+        <tr>
+            <td><img src="imagenes/acelga.jpeg" alt="Acelga"></td>
+            <td><img src="imagenes/acha.jpeg" alt="Achachairu"></td>
+            <td><img src="imagenes/chile.jpg" alt="Ají Verde"></td>
+            <td><img src="imagenes/ajipa.webp" alt="Ají Panka"></td>
+        </tr>
+        <tr>
+            <td>ACELGA POR AMARRO <br>Precio: 3,90Bs.<br>
+                <button onclick="addToCart('ACELGA POR AMARRO', 3.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('ACELGA POR AMARRO')">Cancelar</button>
+            </td>
+            <td>ACHACHAIRU POR KILO <br>Precio: 19,90Bs<br>
+                <button onclick="addToCart('ACHACHAIRU POR KILO', 19.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('ACHACHAIRU POR KILO')">Cancelar</button>
+            </td>
+            <td>AJI VERDE POR KILO <br>Precio: 30,00Bs<br>
+                <button onclick="addToCart('AJI VERDE POR KILO', 30.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('AJI VERDE POR KILO')">Cancelar</button>
+            </td>
+            <td>AJI PANKA POR KILO <br>Precio: 13,50Bs<br>
+                <button onclick="addToCart('AJI PANKA POR KILO', 13.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('AJI PANKA POR KILO')">Cancelar</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="imagenes/ajo.jpg" alt="Ajo"></td>
+            <td><img src="imagenes/alca.jpg" alt="Alcachofa"></td>
+            <td><img src="imagenes/apio.jpg" alt="Apio"></td>
+            <td><img src="imagenes/Apio1.webp" alt="Apio"></td>
+        </tr>
+        <tr>
+            <td>AJO POR KILO <br>Precio: 19,90Bs<br>
+                <button onclick="addToCart('AJO POR KILO', 19.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('AJO POR KILO')">Cancelar</button>
+            </td>
+            <td>ALCACHOFA POR KILO <br>Precio: 32,00Bs<br>
+                <button onclick="addToCart('ALCACHOFA POR KILO', 32.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('ALCACHOFA POR KILO')">Cancelar</button>
+            </td>
+            <td>APIO PARA ENSALADA POR KILO <br>Precio: 22,90Bs<br>
+                <button onclick="addToCart('APIO PARA ENSALADA POR KILO', 22.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('APIO PARA ENSALADA POR KILO')">Cancelar</button>
+            </td>
+            <td>APIO POR AMARRO <br>Precio: 5,50Bs.<br>
+                <button onclick="addToCart('APIO POR AMARRO', 5.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('APIO POR AMARRO')">Cancelar</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="imagenes/arandano.webp" alt="Arándano"></td>
+            <td><img src="imagenes/arverja.webp" alt="Arveja"></td>
+        </tr>
+        <tr>
+            <td>ARANDANO FRESCO 125GR <br>Precio: 17,50Bs.<br>
+                <button onclick="addToCart('ARANDANO FRESCO 125GR', 17.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('ARANDANO FRESCO 125GR')">Cancelar</button>
+            </td>
+            <td>ARVEJA POR KILO <br>Precio: 12,90Bs<br>
+                <button onclick="addToCart('ARVEJA POR KILO', 12.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('ARVEJA POR KILO')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <h2>Carne y Pescado</h2>
+    <div class="slider-container">
+        <img src="imagenes/carne3.jpg" alt="Producto 1" class="slide">
+        <img src="imagenes/carne1.png" alt="Producto 2" class="slide">
+        <img src="imagenes/carne2.jpg" alt="Producto 3" class="slide">
+    </div>
+    <table>
+        <tr>
+            <td><img src="imagenes/alas.jpg" alt="Alas"></td>
+            <td><img src="imagenes/asado.jpg" alt="Asado Cuadrado"></td>
+            <td><img src="imagenes/asado1.jpg" alt="Asado de Tira"></td>
+            <td><img src="imagenes/bife.jpg" alt="Bife"></td>
+        </tr>
+        <tr>
+            <td>ALAS SOFIA POR KILO <br>Precio: 34,30Bs.<br>
+                <button onclick="addToCart('ALAS SOFIA POR KILO', 34.30)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('ALAS SOFIA POR KILO')">Cancelar</button>
+            </td>
+            <td>ASADO CUADRADO KETAL KG <br>Precio: 44,90Bs<br>
+                <button onclick="addToCart('ASADO CUADRADO KETAL KG', 44.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('ASADO CUADRADO KETAL KG')">Cancelar</button>
+            </td>
+            <td>ASADO DE TIRA KETAL KG <br>Precio: 37,90Bs<br>
+                <button onclick="addToCart('ASADO DE TIRA KETAL KG', 37.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('ASADO DE TIRA KETAL KG')">Cancelar</button>
+            </td>
+            <td>BIFE ANGOSTO KETAL ESPECIAL KG <br>Precio: 68,00Bs.<br>
+                <button onclick="addToCart('BIFE ANGOSTO KETAL ESPECIAL KG', 68.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('BIFE ANGOSTO KETAL ESPECIAL KG')">Cancelar</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="imagenes/lomo.jpg" alt="Cabeza de Lomo"></td>
+            <td><img src="imagenes/cadera.jpg" alt="Cadera"></td>
+            <td><img src="imagenes/cerdo.jpg" alt="Chuleta de Cerdo"></td>
+            <td><img src="imagenes/costilla.jpg" alt="Costilla"></td>
+        </tr>
+        <tr>
+            <td>CABEZA DE LOMO KETAL ESPECIAL KG <br>Precio: 46,90Bs<br>
+                <button onclick="addToCart('CABEA DE LOMO KETAL ESPECIAL KG', 46.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CABEA DE LOMO KETAL ESPECIAL KG')">Cancelar</button>
+            </td>
+            <td>CADERA KETAL ESPECIAL KG <br>Precio: 47,90Bs<br>
+                <button onclick="addToCart('CADERA KETAL ESPECIAL KG', 47.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CADERA KETAL ESPECIAL KG')">Cancelar</button>
+            </td>
+            <td>CHULETA DE CERDO SOFIA A GRANEL <br>Precio: 34,30Bs<br>
+                <button onclick="addToCart('CHULETA DE CERDO SOFIA A GRANEL', 34.30)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('CHULETA DE CERDO SOFIA A GRANEL')">Cancelar</button>
+            </td>
+            <td>COSTILLA KETAL KG <br>Precio: 29,90Bs<br>
+                <button onclick="addToCart('COSTILLA KETAL KG', 29.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('COSTILLA KETAL KG')">Cancelar</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="imagenes/pescado.jpg" alt="Filete de Pescado"></td>
+            <td><img src="imagenes/trucha.jpg" alt="Filete de Trucha"></td>
+            <td><img src="imagenes/filete.jpeg" alt="Filete de Basa"></td>
+            <td><img src="imagenes/pejerrey.jpg" alt="Pejerrey"></td>
+        </tr>
+        <tr>
+            <td>FILETE DE PESCADO DMAR ATUN VACIO X KG <br>Precio: 220,00Bs.<br>
+                <button onclick="addToCart('FILETE DE PESCADO DMAR ATUN VACIO X KG', 220.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('FILETE DE PESCADO DMAR ATUN VACIO X KG')">Cancelar</button>
+            </td>
+            <td>FILETE DE PESCADO DMAR TRUCHA VACIO X KILO <br>Precio: 110,00Bs<br>
+                <button onclick="addToCart('FILETE DE PESCADO DMAR TRUCHA VACIO X KILO', 110.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('FILETE DE PESCADO DMAR TRUCHA VACIO X KILO')">Cancelar</button>
+            </td>
+            <td>FILETE DMAR PESCADO BASA VACIO KG <br>Precio: 94,90Bs<br>
+                <button onclick="addToCart('FILETE DMAR PESCADO BASA VACIO KG', 94.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('FILETE DMAR PESCADO BASA VACIO KG')">Cancelar</button>
+            </td>
+            <td>PEJERREY TITICACA KG FILETE CONGELADO <br>Precio: 169,00Bs<br>
+                <button onclick="addToCart('PEJERREY TITICACA KG FILETE CONGELADO', 169.00)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('PEJERREY TITICACA KG FILETE CONGELADO')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Carrito de compras -->
+    <h2>Carrito de Compras</h2>
+    <pre id="carrito">Tu carrito está vacío.</pre>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section contacto">
+                <h3>Supermercados Javis</h3>
+                <p>¡La frescura y calidad que mereces!</p>
+                <p>Dirección: Calle japo, Ciudad El Alto, País Bolivia</p>
+                <p>Teléfono: +591 77214890</p>
+                <p>Email: info@supermercadosjavis.com</p>
+            </div>
+        
+            <div class="footer-section enlaces">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="oferta.html">Ofertas del Día</a></li>
+                    <li><a href="produc.fresco.html">Frutas y Verduras</a></li>
+                    <li><a href="produc.fresco.html">Carnes y Pescados</a></li>
+                    <li><a href="#">Mi Cuenta</a></li>
+                </ul>
+            </div>
+            
+            <!-- Horarios de Atención -->
+            <div class="footer-section horarios">
+                <h4>Horarios de Atención</h4>
+                <p>Lunes a Viernes: 8:00 AM - 8:00 PM</p>
+                <p>Sábado: 9:00 AM - 6:00 PM</p>
+                <p>Domingo: 10:00 AM - 4:00 PM</p>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="footer-section redes">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/me/"><img src="imagenes/face.jpeg" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/javier.gutierrezflores.58/profilecard/?igsh=azFtb3c5amUxeWZj"><img src="imagenes/insta.jpeg" alt="Instagram"></a>
+                    <a href="#"><img src="imagenes/twiter.jpeg" alt="Twitter"></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Supermercados Javis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

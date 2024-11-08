@@ -1,0 +1,216 @@
+header
+{ 
+    font-size: large;
+    font-style: italic;
+    font-family: cursive;
+}
+body
+{
+    background: linear-gradient(rgb(4, 189, 118),rgb(41, 238, 146));
+    text-decoration: none;
+     font-family: verdana;
+}
+.inicio {
+    position: fixed; /* Menú fijo en la parte superior */
+    top: 0; /* Fijado en la parte superior */
+    background: linear-gradient(orange,yellow);
+    width: 100%; /* Ocupa todo el ancho */
+    display: flex; /* Flexbox para alinear elementos */
+    align-items: center; /* Centra verticalmente */
+    z-index: 1000; /* Asegura que esté encima del contenido */
+    padding: 10px 300px; /* Espaciado interno */
+    box-shadow: 0px 4px 2px -2px gray; /* Añade sombra */
+}
+
+.logo {
+    width: 50px; /* Tamaño del logo */
+    height: auto; /* Mantiene las proporciones */
+    margin-left: 20px; /* Margen a la izquierda del logo */
+}
+.menu {
+    margin-right: 20px; /* Espaciado entre los enlaces */
+    text-decoration: none; /* Elimina el subrayado */
+    color: #000; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno del enlace */
+    font-weight: bolder;
+}
+
+h1
+{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: rgb(2, 2, 7);
+    font-family: Calibri Light (Títulos);
+}
+h2
+{
+    color: rgb(0, 2, 2)
+}
+.super{
+    font-family: algerian;
+    font-size: 50px;
+}
+p
+{
+    color:dark;
+    font-size: 18px;   
+}
+ul
+{
+    list-style-type: none;
+    letter-spacing: 7px;
+    color:red;
+}
+.fami{
+    width: 663px;
+    height: 400px;
+}
+td
+{
+    text-align: center;
+}
+button
+{
+
+}
+img
+{
+
+}
+.tienda{
+    padding: 50px;
+    background: linear-gradient(rgb(5, 151, 83), rgb(104, 202, 24));
+}
+.tabla
+{
+    align-content: center;
+    text-align: center;
+    background-color: rgb(2, 12, 59);
+}
+footer
+{
+
+}
+.lacteos{
+    width: 200px;
+    height: 250px;
+}
+.famili{
+    width: 1000px;
+    height: 400px;
+}
+.familis{
+    width: 1000px;
+    height: 400px;
+}
+.javis{
+    width: 1000px;
+    height: 400px;
+}
+/* Estilos generales para el footer */
+.footer {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 15px;
+    min-width: 200px; /* Mínimo de ancho para evitar que las secciones se vuelvan demasiado pequeñas */
+}
+
+.footer-section h3,
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffa500; /* Color naranja para destacar títulos */
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer-section ul li a:hover {
+    color: #ffa500; /* Cambia de color al pasar el ratón */
+}
+
+/* Estilos para la sección de redes sociales */
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+    transition: transform 0.2s;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+}
+
+/* Estilos para el área inferior del footer */
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    color: #aaa;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section h3,
+    .footer-section h4 {
+        font-size: 16px;
+    }
+    .footer-section p,
+    .footer-section ul,
+    .footer-section li {
+        font-size: 13px;
+    }
+    .footer-bottom {
+        font-size: 11px;
+    }
+}

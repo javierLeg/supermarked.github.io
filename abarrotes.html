@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo2.css">
+    <title>Productos - Abarrotes</title>
+    <script>
+        // Función para añadir productos al carrito
+        let carrito = [];
+
+        function addToCart(producto, precio) {
+            carrito.push({ producto: producto, precio: precio });
+            alert(`${producto} ha sido añadido al carrito.`);
+            actualizarCarrito();
+        }
+
+        // Función para cancelar un producto del carrito
+        function cancelarProducto(producto) {
+            let index = carrito.findIndex(item => item.producto === producto);
+            if (index !== -1) {
+                carrito.splice(index, 1);
+                alert(`${producto} ha sido eliminado del carrito.`);
+                actualizarCarrito();
+            }
+        }
+        // Actualizar el contenido del carrito
+        function actualizarCarrito() {
+            let carritoContent = "";
+            let total = 0;
+            carrito.forEach((item) => {
+                carritoContent += `${item.producto} - ${item.precio} Bs\n`;
+                total += item.precio;
+            });
+            carritoContent += `\nTotal: ${total.toFixed(2)} Bs`;
+            document.getElementById("carrito").innerText = carritoContent;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="inicio">
+            <img src="imagenes/jv.jpeg" alt="Logo" class="logo">
+            <a class="menu" href="index.html">INICIO</a>
+            <a class="menu" href="oferta.html">OFERTAS</a>
+            <a class="menu" href="pedidos.html">PEDIDOS</a>
+            <a class="menu" href="registro.htmls" target="_blank">REGÍSTRATE</a> 
+        </div>
+    </header>
+    <h1>Productos - Abarrotes</h1>
+    <h2>Arroz y Granos</h2>
+    <div class="slider-container">
+        <img src="imagenes/abarrotes.webp" alt="Producto 1" class="slide">
+        <img src="imagenes/abarrotes3.jpg" alt="Producto 2" class="slide">
+        <img src="imagenes/abarrotes4.jpg" alt="Producto 3" class="slide">
+    </div>
+    <!-- Sección de productos -->
+    <table>
+        <tr>
+            <td><img src="imagenes/arroz.jpeg" alt="Arroz"></td>
+            <td><img src="imagenes/arroz1.jpg" alt="Arroz"></td>
+            <td><img src="imagenes/arrroz2.webp" alt="Arroz"></td>
+            <td><img src="imagenes/arroz2.webp" alt="Arroz"></td>
+        </tr>
+        <tr>
+            <td>ARROZ CAISY ESTAQUILLA 1KG<br>Precio: 9,90Bs<br>
+                <button onclick="addToCart('ARROZ CAISY ESTAQUILLA 1KG', 9.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('ARROZ CAISY ESTAQUILLA 1KG')">Cancelar</button>
+            </td>
+            <td>ARROZ CAISY ESTAQUILLA 5KG<br>Precio: 45,90Bs<br>
+                <button onclick="addToCart('ARROZ CAISY ESTAQUILLA 5KG', 45.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('ARROZ CAISY ESTAQUILLA 5KG')">Cancelar</button>
+            </td>
+            <td>ARROZ CAISY GRANO DE ORO 5KG<br>Precio: 49,90Bs<br>
+                <button onclick="addToCart('ARROZ CAISY GRANO DE ORO 5KG', 49.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('ARROZ CAISY GRANO DE ORO 5KG')">Cancelar</button>
+            </td>
+            <td>ARROZ CAISY GRANO DE ORO 1KG<br>Precio: 10,50Bs<br>
+                <button onclick="addToCart('ARROZ CAISY GRANO DE ORO 1KG', 10.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('ARROZ CAISY GRANO DE ORO 1KG')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/arroz3.jpg" alt="Arroz"></td>
+            <td><img src="imagenes/arroz4.jpg" alt="Arroz"></td>
+            <td><img src="imagenes/grano.webp" alt="Garbanzo"></td>
+            <td><img src="imagenes/lenteja.jpg" alt="Lenteja"></td>
+        </tr>
+        <tr>
+            <td>ARROZ GAVIOTA 5KG<br>Precio: 47,50Bs<br>
+                <button onclick="addToCart('ARROZ GAVIOTA 5KG', 47.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('ARROZ GAVIOTA 5KG')">Cancelar</button>
+            </td>
+            <td>ARROZ PAUHICHI 5KG<br>Precio: 32,90Bs<br>
+                <button onclick="addToCart('ARROZ PAUHICHI 5KG', 32.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('ARROZ PAUHICHI 5KG')">Cancelar</button>
+            </td>
+            <td>GARBANZO GRANO DE ORO 450GR<br>Precio: 18,10Bs<br>
+                <button onclick="addToCart('GARBANZO GRANO DE ORO 450GR', 18.10)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('GARBANZO GRANO DE ORO 450GR')">Cancelar</button>
+            </td>
+            <td>LENTEJA PRINCESA 400GR<br>Precio: 12,90Bs<br>
+                <button onclick="addToCart('LENTEJA PRINCESA 400GR', 12.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('LENTEJA PRINCESA 400GR')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/lenteja1.jpg" alt="Lenteja"></td>
+            <td><img src="imagenes/mani.jpg" alt="Maní"></td>
+            <td><img src="imagenes/mani1.jpg" alt="Maní"></td>
+            <td><img src="imagenes/quinua.jpg" alt="Quinua"></td>
+        </tr>
+        <tr>
+            <td>LENTEJA SABOR ANDINO 450GR<br>Precio: 10,80Bs<br>
+                <button onclick="addToCart('LENTEJA SABOR ANDINO 450GR', 10.80)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('LENTEJA SABOR ANDINO 450GR')">Cancelar</button>
+            </td>
+            <td>MANI GRANO DE ORO TOSTADO 400GR<br>Precio: 16,10Bs<br>
+                <button onclick="addToCart('MANI GRANO DE ORO 400GR', 16.10)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('MANI GRANO DE ORO 400GR')">Cancelar</button>
+            </td>
+            <td>MANI YOLANDA BLANCO X KILO<br>Precio: 32,40Bs<br>
+                <button onclick="addToCart('MANI YOLANDA BLANCO', 32.40)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('MANI YOLANDA BLANCO')">Cancelar</button>
+            </td>
+            <td>QUINUA IRUPANA ORGANICA BLANCA 400G<br>Precio: 16,50Bs<br>
+                <button onclick="addToCart('QUINUA IRUPANA ORGANICA BLANCA 400G', 16.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('QUINUA IRUPANA ORGANICA BLANCA 400G')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/quinua1.jpg" alt="Quinua"></td>
+            <td><img src="imagenes/quinua2.jpg" alt="Quinua"></td>
+            <td><img src="imagenes/semola.jpeg" alt="Sémola"></td>
+            <td><img src="imagenes/trigo.webp" alt="Trigo"></td>
+        </tr>
+        <tr>
+            <td>QUINUA QUINUT BLANCA 1KG<br>Precio: 45,90Bs<br>
+                <button onclick="addToCart('QUINUA QUINUT BLANCA 1KG', 45.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('QUINUA QUINUT BLANCA 1KG')">Cancelar</button>
+            </td>
+            <td>QUINUA REAL QUINUT BLANCA 400GR<br>Precio: 18,90Bs<br>
+                <button onclick="addToCart('QUINUA REAL QUINUT BLANCA 400GR', 18.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('QUINUA REAL QUINUT BLANCA 400GR')">Cancelar</button>
+            </td>
+            <td>SEMOLA GRANO DE ORO 500G<br>Precio: 7,50Bs<br>
+                <button onclick="addToCart('SEMOLA GRANO DE ORO 500G', 7.50)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('SEMOLA GRANO DE ORO 500G')">Cancelar</button>
+            </td>
+            <td>TRIGO ALMA 1KG<br>Precio: 7,40Bs<br>
+                <button onclick="addToCart('TRIGO ALMA 1KG', 7.40)">Añadir al carrito</button>
+                <button class="cancel" onclick="cancelarProducto('TRIGO ALMA 1KG')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Carrito de compras -->
+    <h2>Carrito de Compras</h2>
+    <pre id="carrito">Tu carrito está vacío.</pre>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section contacto">
+                <h3>Supermercados Javis</h3>
+                <p>¡La frescura y calidad que mereces!</p>
+                <p>Dirección: Calle japo, Ciudad El Alto, País Bolivia</p>
+                <p>Teléfono: +591 77214890</p>
+                <p>Email: info@supermercadosjavis.com</p>
+            </div>
+        
+            <div class="footer-section enlaces">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="oferta.html">Ofertas del Día</a></li>
+                    <li><a href="produc.fresco.html">Frutas y Verduras</a></li>
+                    <li><a href="produc.fresco.html">Carnes y Pescados</a></li>
+                    <li><a href="#">Mi Cuenta</a></li>
+                </ul>
+            </div>
+            
+            <!-- Horarios de Atención -->
+            <div class="footer-section horarios">
+                <h4>Horarios de Atención</h4>
+                <p>Lunes a Viernes: 8:00 AM - 8:00 PM</p>
+                <p>Sábado: 9:00 AM - 6:00 PM</p>
+                <p>Domingo: 10:00 AM - 4:00 PM</p>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="footer-section redes">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/me/"><img src="imagenes/face.jpeg" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/javier.gutierrezflores.58/profilecard/?igsh=azFtb3c5amUxeWZj"><img src="imagenes/insta.jpeg" alt="Instagram"></a>
+                    <a href="#"><img src="imagenes/twiter.jpeg" alt="Twitter"></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Supermercados Javis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Supermercado - Pedidos</title>
+        <link rel="stylesheet" href="pedid.css">
+        <script>
+            let pedidos = [];
+
+            function agregarPedido() {
+                const producto = document.getElementById('producto').value;
+                const cantidad = document.getElementById('cantidad').value;
+
+                // Agregar producto al pedido
+                pedidos.push({ producto, cantidad });
+
+                // Actualizar lista visualmente
+                actualizarListaPedidos();
+            }
+
+            function actualizarListaPedidos() {
+                const lista = document.getElementById('lista-pedidos');
+                lista.innerHTML = '';  // Limpiar lista anterior
+
+                pedidos.forEach((pedido, index) => {
+                    const li = document.createElement('li');
+                    li.textContent = `${pedido.cantidad} x ${pedido.producto}`;
+                    lista.appendChild(li);
+                });
+            }
+
+            function finalizarPedido() {
+                if (pedidos.length > 0) {
+                    alert("Gracias por tu pedido. Procesaremos tu solicitud.");
+                    pedidos = [];  // Vaciar el carrito después de finalizar
+                    actualizarListaPedidos();
+                } else {
+                    alert("No has agregado productos a tu pedido.");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="inicio">
+                <img src="imagenes/jv.jpeg" alt="Logo" class="logo">
+                <a class="menu" href="primero.html">INICIO</a>
+                <a class="menu" href="oferta.html">OFERTAS</a>
+                <a class="menu" href="pedidos.html">PEDIDOS</a>
+                <a class="menu" href="registro.html" target="_blank">REGÍSTRATE</a> 
+            </div>
+        </header>
+<br><br><br><br>
+        
+        <div class="tienda">
+            <h2>Realiza tu Pedido</h2>
+            <img src="imagenes/pedido.jpeg" class="cel">
+            <form id="pedido-form">
+                <label for="producto">Seleccione un producto:</label>
+                <select id="producto" name="producto">
+                    <option value="Lácteos">Lácteos</option>
+                    <option value="Abarrotes">Abarrotes</option>
+                    <option value="Productos frescos">Productos frescos</option>
+                    <option value="Abarrotes">Bebidas</option>
+                </select>
+
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" min="1" value="1">
+
+                <button type="button" onclick="agregarPedido()">Agregar al Pedido</button>
+            </form>
+
+            <h3>Resumen de Pedido</h3>
+            <ul id="lista-pedidos"></ul>
+            <button type="button" onclick="finalizarPedido()">Finalizar Pedido</button>
+
+            <h3>Opciones de Contacto</h3>
+            <div class="contact-options">
+                <a href="https://wa.me/77214890" target="_blank">
+                    <img src="imagenes/wats.jpeg" alt="WhatsApp" class="contact-icon">
+                </a>
+                <a href="https://m.me/javier.gutierrezflores.58?hash=AbbtofD3Meccb0Hc&source=qr_link_share" target="_blank">
+                    <img src="imagenes/mess.jpeg" alt="Messenger" class="contact-icon">
+                </a>
+                <a href="https://www.tiktok.com/@_javierg.infinity8_?_t=8rDIN89IWCF&_r=1" target="_blank">
+                    <img src="imagenes/tik.jpeg" alt="TikTok" class="contact-icon">
+                </a>
+            </div>
+        </div>
+        <a href="terminos.html"><h3 class="politica">politicas y privacidad de pedidos en <br> <center>SUPERMERCADOS JAVIS</center></h3></a>
+
+        <footer class="footer">
+             <p>Gracias por su compra en Supermercado JAVIS</p>
+            <div class="footer-container">
+                <div class="footer-section contacto">
+                    <h3>Supermercados Javis</h3>
+                    <p>¡La frescura y calidad que mereces!</p>
+                    <p>Dirección: Calle japo, Ciudad El Alto, País Bolivia</p>
+                    <p>Teléfono: +591 77214890</p>
+                    <p>Email: info@supermercadosjavis.com</p>
+                </div>
+            
+                <div class="footer-section enlaces">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="oferta.html">Ofertas del Día</a></li>
+                        <li><a href="produc.fresco.html">Frutas y Verduras</a></li>
+                        <li><a href="primero.html">Carnes y Pescados</a></li>
+                        <li><a href="#">Mi Cuenta</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Horarios de Atención -->
+                <div class="footer-section horarios">
+                    <h4>Horarios de Atención</h4>
+                    <p>Lunes a Viernes: 8:00 AM - 8:00 PM</p>
+                    <p>Sábado: 9:00 AM - 6:00 PM</p>
+                    <p>Domingo: 10:00 AM - 4:00 PM</p>
+                </div>
+    
+                <!-- Redes Sociales -->
+                <div class="footer-section redes">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/me/"><img src="imagenes/face.jpeg" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/javier.gutierrezflores.58/profilecard/?igsh=azFtb3c5amUxeWZj"><img src="imagenes/insta.jpeg" alt="Instagram"></a>
+                        <a href="#"><img src="imagenes/twiter.jpeg" alt="Twitter"></a>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Supermercados Javis. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+        <script src="scripts.js"></script>
+    </body>
+</html>

@@ -1,0 +1,166 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.last-update {
+    font-size: 0.9em;
+    color: #777;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.last-update span {
+    color: #333;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #444;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #007acc;
+    padding-bottom: 5px;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+p strong {
+    color: #007acc;
+}
+
+
+a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.footer {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 15px;
+    min-width: 200px; /* Mínimo de ancho para evitar que las secciones se vuelvan demasiado pequeñas */
+}
+
+.footer-section h3,
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffa500; /* Color naranja para destacar títulos */
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.footer-section ul li a:hover {
+    color: #ffa500; /* Cambia de color al pasar el ratón */
+}
+
+/* Estilos para la sección de redes sociales */
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+    transition: transform 0.2s;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+}
+
+/* Estilos para el área inferior del footer */
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    color: #aaa;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section h3,
+    .footer-section h4 {
+        font-size: 16px;
+    }
+    .footer-section p,
+    .footer-section ul,
+    .footer-section li {
+        font-size: 13px;
+    }
+    .footer-bottom {
+        font-size: 11px;
+    }
+}

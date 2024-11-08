@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo2.css">
+    <title>Productos</title>
+    <script>
+        // Carrito de compras
+        let carrito = [];
+
+        // Función para añadir productos al carrito
+        function addToCart(producto, precio) {
+            carrito.push({ producto: producto, precio: precio });
+            alert(`${producto} ha sido añadido al carrito.`);
+            actualizarCarrito();
+        }
+
+        // Función para eliminar productos del carrito
+        function removeFromCart(producto) {
+            let index = carrito.findIndex(item => item.producto === producto);
+            if (index !== -1) {
+                carrito.splice(index, 1);
+                alert(`${producto} ha sido eliminado del carrito.`);
+                actualizarCarrito();
+            }
+        }
+
+        // Actualizar el contenido del carrito
+        function actualizarCarrito() {
+            let carritoContent = "";
+            let total = 0;
+            carrito.forEach((item) => {
+                carritoContent += `${item.producto} - ${item.precio}Bs\n`;
+                total += item.precio;
+            });
+            carritoContent += `\nTotal: ${total.toFixed(2)}Bs`;
+            document.getElementById("carrito").innerText = carritoContent;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="inicio">
+            <img src="imagenes/jv.jpeg" alt="Logo" class="logo">
+            <a class="menu" href="index.html">INICIO</a>
+            <a class="menu" href="oferta.html">OFERTAS</a>
+            <a class="menu" href="pedidos.html">PEDIDOS</a>
+            <a class="menu" href="" target="_blank">REGÍSTRATE</a> 
+        </div>
+    </header>
+    <h1>CONOCE NUESTROS PRODUCTOS</h1>
+    <h2>Lácteos</h2>
+    <div class="slider-container">
+        <img src="imagenes/lacteos.jpg" alt="Producto 1" class="slide">
+        <img src="imagenes/lacteos1.jpg" alt="Producto 2" class="slide">
+        <img src="imagenes/lacteos2.jpg" alt="Producto 3" class="slide">
+    </div>
+    <!-- Sección de productos -->
+    <table>
+        <tr>
+            <td><img src="imagenes/leche.webp" alt="Leche"></td>
+            <td><img src="imagenes/yogurt.webp" alt="Yogurt"></td>
+            <td><img src="imagenes/biogurt.webp" alt="Biogurt"></td>
+            <td><img src="imagenes/yogu.webp" alt="Yogu"></td>
+        </tr>
+        <tr>
+            <td>Leche fresca natural Pil<br>Precio: 6 Bs<br>
+                <button onclick="addToCart('Leche fresca natural Pil', 6)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Leche fresca natural Pil')">Cancelar</button>
+            </td>
+            <td>Yogurt Pil sabor Durazno 1000 ml<br>Precio: 15 Bs<br>
+                <button onclick="addToCart('Yogurt Pil sabor Durazno', 15)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Yogurt Pil sabor Durazno')">Cancelar</button>
+            </td>
+            <td>Biogurt Pil sabor Manga 1000g<br>Precio: 18 Bs<br>
+                <button onclick="addToCart('Biogurt Pil sabor Manga', 18)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Biogurt Pil sabor Manga')">Cancelar</button>
+            </td>
+            <td>Yogurt Frutilla Pil 1000g<br>Precio: 18 Bs<br>
+                <button onclick="addToCart('Yogurt Frutilla Pil', 18)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Yogurt Frutilla Pil')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/evapo.jpg" alt="Leche Evaporada"></td>
+            <td><img src="imagenes/avena.jpeg" alt="Avena Canela"></td>
+            <td><img src="imagenes/avena1.webp" alt="Avena Deslactosada"></td>
+            <td><img src="imagenes/avena2.jpg" alt="Avena Natural"></td>
+        </tr>
+        <tr>
+            <td>Leche evaporada Pura Vida 400g<br>Precio: 7,90 Bs<br>
+                <button onclick="addToCart('Leche evaporada Pura Vida', 7.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Leche evaporada Pura Vida')">Cancelar</button>
+            </td>
+            <td>Avena Alpina Canela 250ml<br>Precio: 6,90 Bs<br>
+                <button onclick="addToCart('Avena Alpina Canela', 6.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Avena Alpina Canela')">Cancelar</button>
+            </td>
+            <td>Avena Alpina Deslactosada 250ml<br>Precio: 6,90 Bs<br>
+                <button onclick="addToCart('Avena Alpina Deslactosada', 6.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Avena Alpina Deslactosada')">Cancelar</button>
+            </td>
+            <td>Avena Alpina Natural 250ml<br>Precio: 6,90 Bs<br>
+                <button onclick="addToCart('Avena Alpina Natural', 6.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Avena Alpina Natural')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/yoguyogu.png" alt="Yogu Yogu Chirimoya"></td>
+            <td><img src="imagenes/yoguda.jpeg" alt="Yogu Yogu Damasco"></td>
+            <td><img src="imagenes/yogufrut.png" alt="Yogu Yogu Frutilla"></td>
+            <td><img src="imagenes/mora.webp" alt="Yogu Yogu Mora"></td>
+        </tr>
+        <tr>
+            <td>Bebida láctea Yogu Yogu Chirimoya 200ml<br>Precio: 5 Bs<br>
+                <button onclick="addToCart('Yogu Yogu Chirimoya', 5)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Yogu Yogu Chirimoya')">Cancelar</button>
+            </td>
+            <td>Bebida láctea Yogu Yogu Damasco 200ml<br>Precio: 5 Bs<br>
+                <button onclick="addToCart('Yogu Yogu Damasco', 5)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Yogu Yogu Damasco')">Cancelar</button>
+            </td>
+            <td>Bebida láctea Yogu Yogu Frutilla 200ml<br>Precio: 5 Bs<br>
+                <button onclick="addToCart('Yogu Yogu Frutilla', 5)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Yogu Yogu Frutilla')">Cancelar</button>
+            </td>
+            <td>Bebida láctea Yogu Yogu Mora 200ml<br>Precio: 5 Bs<br>
+                <button onclick="addToCart('Yogu Yogu Mora', 5)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Yogu Yogu Mora')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/nestle.jpeg" alt="Crema de Leche Nestlé"></td>
+            <td><img src="imagenes/nestle1.jpg" alt="Crema Nestlé Abrefácil"></td>
+            <td><img src="imagenes/crema.jpeg" alt="Crema Pil 1LT"></td>
+            <td><img src="imagenes/dulce.jpg" alt="Dulce de Leche Pil"></td>
+        </tr>
+        <tr>
+            <td>Crema de Leche Nestlé 300g<br>Precio: 10,90 Bs<br>
+                <button onclick="addToCart('Crema de Leche Nestlé 300g', 10.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Crema de Leche Nestlé 300g')">Cancelar</button>        
+            </td>
+            <td>Crema de Leche Nestlé Abrefácil 225g<br>Precio: 9,30 Bs<br>
+                <button onclick="addToCart('Crema de Leche Nestlé 225g', 9.30)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Crema de Leche Nestlé 225g')">Cancelar</button>
+            </td>
+            <td>Crema de Leche Pil 1LT UHT<br>Precio: 29,90 Bs<br>
+                <button onclick="addToCart('Crema de Leche Pil 1LT', 29.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Crema de Leche Pil 1LT')">Cancelar</button>
+            </td>
+            <td>Dulce de Leche Pil 1kg<br>Precio: 27 Bs<br>
+                <button onclick="addToCart('Dulce de Leche Pil 1kg', 27)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Dulce de Leche Pil 1kg')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td><img src="imagenes/dulce1.webp" alt="Dulce de Leche Pil 250g"></td>
+            <td><img src="imagenes/dulce2.jpg" alt="Dulce Sancor 400g"></td>
+            <td><img src="imagenes/dulce3.webp" alt="Dulce Sancor 250g"></td>
+            <td><img src="imagenes/dulce4.webp" alt="Dulce Sancor Tradicional 400g"></td>
+        </tr>
+        <tr>
+            <td>Dulce de Leche Pil 250g<br>Precio: 9,70 Bs<br>
+                <button onclick="addToCart('Dulce de Leche Pil 250g', 9.70)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Dulce de Leche Pil 250g')">Cancelar</button>
+            </td>
+            <td>Dulce de Leche Sancor Trad 400g<br>Precio: 13,90 Bs<br>
+                <button onclick="addToCart('Dulce de Leche Sancor Trad 400g', 13.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Dulce de Leche Sancor Trad 400g')">Cancelar</button>
+            </td>
+            <td>Dulce de Leche Sancor 250g<br>Precio: 10,90 Bs<br>
+                <button onclick="addToCart('Dulce de Leche Sancor 250g', 10.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Dulce de Leche Sancor 250g')">Cancelar</button>
+            </td>
+            <td>Dulce de Leche Sancor Trad 400g<br>Precio: 16,90 Bs<br>
+                <button onclick="addToCart('Dulce de Leche Sancor Trad 400g', 16.90)">Añadir al carrito</button>
+                <button class="cancel" onclick="removeFromCart('Dulce de Leche Sancor Trad 400g')">Cancelar</button>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Carrito de compras -->
+    <h2>Carrito de Compras</h2>
+    <pre id="carrito">Tu carrito está vacío.</pre>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section contacto">
+                <h3>Supermercados Javis</h3>
+                <p>¡La frescura y calidad que mereces!</p>
+                <p>Dirección: Calle japo, Ciudad El Alto, País Bolivia</p>
+                <p>Teléfono: +591 77214890</p>
+                <p>Email: info@supermercadosjavis.com</p>
+            </div>
+        
+            <div class="footer-section enlaces">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="oferta.html">Ofertas del Día</a></li>
+                    <li><a href="produc.fresco.html">Frutas y Verduras</a></li>
+                    <li><a href="produc.fresco.html">Carnes y Pescados</a></li>
+                    <li><a href="#">Mi Cuenta</a></li>
+                </ul>
+            </div>
+            
+            <!-- Horarios de Atención -->
+            <div class="footer-section horarios">
+                <h4>Horarios de Atención</h4>
+                <p>Lunes a Viernes: 8:00 AM - 8:00 PM</p>
+                <p>Sábado: 9:00 AM - 6:00 PM</p>
+                <p>Domingo: 10:00 AM - 4:00 PM</p>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="footer-section redes">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/me/"><img src="imagenes/face.jpeg" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/javier.gutierrezflores.58/profilecard/?igsh=azFtb3c5amUxeWZj"><img src="imagenes/insta.jpeg" alt="Instagram"></a>
+                    <a href="#"><img src="imagenes/twiter.jpeg" alt="Twitter"></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Supermercados Javis. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
